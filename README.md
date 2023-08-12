@@ -49,7 +49,7 @@ Second, Make sure you install the latest [Google Cloud CLI](https://cloud.google
     ```
 
 ## How to use?
-Construct a **POST** request with the required and/or optional fields in JSON format to the service endpoint **https://dual-token-gen-api-<random_string>-uc.a.run.app/token**
+Construct a **POST** request with the required and/or optional fields in JSON format to the service endpoint: `https://dual-token-gen-api-<random_string>-uc.a.run.app/token`
 
 Example POST body in JSON:
 ```

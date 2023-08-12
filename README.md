@@ -5,7 +5,7 @@ This is an example of hosting the token generator on [Cloud Run](https://cloud.g
 
 Media CDN supports multiple signed request options to help protect your content from unauthorized distribution.
 With [dual-token authentication](https://cloud.google.com/media-cdn/docs/use-dual-token-authentication), Media CDN uses a **short-duration token** for playback initiation, and a **long-duration token** for the remainder of the playback session. 
-MediaCDN has extensive documentations on [how to generate tokens](https://cloud.google.com/media-cdn/docs/generate-tokens), the code samples are written in [Python](https://cloud.google.com/media-cdn/docs/generate-tokens#mediacdn_dualtoken_sign_token-python), [JAVA](https://cloud.google.com/media-cdn/docs/generate-tokens#mediacdn_dualtoken_sign_token-java), and [Ruby](https://github.com/GoogleCloudPlatform/ruby-docs-samples/tree/main/media_cdn).
+MediaCDN has extensive documentations on [how to generate tokens](https://cloud.google.com/media-cdn/docs/generate-tokens), the code samples are written in [Python](https://cloud.google.com/media-cdn/docs/generate-tokens#mediacdn_dualtoken_sign_token-python), [Java](https://cloud.google.com/media-cdn/docs/generate-tokens#mediacdn_dualtoken_sign_token-java), and [Ruby](https://github.com/GoogleCloudPlatform/ruby-docs-samples/tree/main/media_cdn).
 
 Looking for enabling dual-token authentication? Follow this [step-by-step guide](https://cloud.google.com/media-cdn/docs/use-dual-token-authentication) from Google. 
 

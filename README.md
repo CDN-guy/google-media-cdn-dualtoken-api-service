@@ -1,7 +1,7 @@
 # Google MediaCDN Dual-token Authentication TokenGen API Service
 
 ## What it is?
-This is an example of hosting the token generator on [Cloud Run](https://cloud.google.com/run) as an API without the need of integrating the token generator into your code base.
+This is an example of hosting the MediaCDN dual-token authentication token generator on [Cloud Run](https://cloud.google.com/run) as an API without the need of integrating the token generator into your code base.
 
 Media CDN supports multiple signed request options to help protect your content from unauthorized distribution.
 With [dual-token authentication](https://cloud.google.com/media-cdn/docs/use-dual-token-authentication), Media CDN uses a **short-duration token** for playback initiation, and a **long-duration token** for the remainder of the playback session. 

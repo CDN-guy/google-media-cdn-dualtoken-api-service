@@ -14,7 +14,6 @@ First, you need to have a Google Cloud account. Don't have one? Sign up for [Fre
 
 Second, Make sure you install the latest [Google Cloud CLI](https://cloud.google.com/sdk/docs/install)
 
-
 ## How to deploy?
 
 1. Clone this repo.
@@ -47,6 +46,7 @@ Second, Make sure you install the latest [Google Cloud CLI](https://cloud.google
     ```
     https://dual-token-gen-api-<random_string>-uc.a.run.app
     ```
+
 
 ## How to use?
 Construct a **POST** request with the required and/or optional fields in JSON format to the service endpoint: `https://dual-token-gen-api-<random_string>-uc.a.run.app/token`
@@ -86,8 +86,35 @@ You should expect to get the following response from the service endpoint, with 
 }
 ```
 
-OK, REAY TO GO! HAPPY STREAMING!
+ OK, REAY TO GO! HAPPY STREAMING!
+
+## How to get the base64-encoded token keys?
+
+1. Ed25519 Private/Public Key Pair
+   ```
+   # generate an ed25519 key pair
+   openssl genpkey -algorithm ed25519 -outform PEM -out ed25519.key
+
+   # base64-encoded private key 
+   openssl pkey -outform DER -in ed25519.key | tail -c +17 | python3 -c "import base64, sys; print(('%s' % base64.urlsafe_b64encode(sys.stdin.buffer.read()))[2:-1])"
+
+   # base64-encoded public key
+   openssl pkey -outform DER -pubout -in ed25519.key | tail -c +13 | python3 -c "import base64, sys; print(('%s' % base64.urlsafe_b64encode(sys.stdin.buffer.read()))[2:-1])"
+   ```
+
+1. HAMC-based Secret Key
+   ```
+   # generate HAMC secret key
+   python3 -c "import secrets;open('token.secret','wb').write(secrets.token_bytes(32))"
+
+   # base64-encoded secret key
+   cat token.secret| python3 -c "import base64, sys; print(('%s' % base64.urlsafe_b64encode(sys.stdin.buffer.read()))[2:-1])"
+   ```
+
+
+
 
 ## Licensing
 
 * See [LICENSE](LICENSE)
+
